@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { BankService } from '../../services/bank.service';
 
 @Component({
   selector: 'app-all-bank',
@@ -8,4 +9,16 @@ import { Component } from '@angular/core';
 })
 export class AllBankComponent {
     
+  bankservice=inject(BankService)
+  bankData:any
+  constructor()
+  {
+    this.getAllBanks()
+  }
+  getAllBanks()
+  {
+    this.bankservice.getAllBank().subscribe((res)=>{
+      this.bankData=res
+    });
+  }
 }

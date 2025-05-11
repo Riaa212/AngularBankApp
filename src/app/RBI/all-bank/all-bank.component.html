@@ -1,3 +1,18 @@
-<div class="row">
-    
+<div class="bank-container p-5">
+  <div class="bank-title-bar">
+    <h2>Bank Directory</h2>
+    <input type="text" class="bank-search" placeholder="Search banks...">
+  </div>
+
+  <div class="bank-grid" *ngFor="let bank of bankData">
+    <div class="bank-card mb-3">
+      <h4 class="bank-name">{{bank.bankName}} Bank</h4>
+      <p>Branch: {{bank.mainBranch}}</p>
+      <p>IFSC: {{bank.ifsc}}</p>
+      <p>Location: {{bank.location}}</p>
+    </div>
+  
+  </div>
 </div>
+
+<!-- {{bankData | json}} -->

@@ -1,0 +1,98 @@
+<div class="admin-profile-card">
+  <div class="admin-profile-header">
+    <img src="https://i.pravatar.cc/100?img=12" alt="Admin Avatar" class="admin-avatar">
+    <div class="admin-info">
+      <h3>Rajeev Malhotra</h3>
+      <p class="admin-role">Administrator</p>
+      <span class="admin-status online">Online</span>
+    </div>
+  </div>
+  <div class="admin-profile-body">
+    <div class="info-row">
+      <label>Email:</label>
+      <span>rajeev.malhotra@mybank.com</span>
+    </div>
+    <div class="info-row">
+      <label>Phone:</label>
+      <span>+91 9876543210</span>
+    </div>
+    <div class="info-row">
+      <label>Location:</label>
+      <span>New Delhi, India</span>
+    </div>
+    <div class="info-row">
+      <label>Joined:</label>
+      <span>15 Jan 2023</span>
+    </div>
+  </div>
+</div>
+
+<style>
+  .admin-profile-card {
+    background: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+    padding: 24px;
+    font-family: 'Segoe UI', sans-serif;
+    max-width: 500px;
+    margin: auto;
+  }
+
+  .admin-profile-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+
+  .admin-avatar {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+    margin-right: 20px;
+  }
+
+  .admin-info h3 {
+    margin: 0;
+    font-size: 22px;
+    font-weight: 600;
+    color: #333;
+  }
+
+  .admin-role {
+    color: #777;
+    font-size: 14px;
+    margin: 4px 0;
+  }
+
+  .admin-status {
+    padding: 4px 10px;
+    border-radius: 50px;
+    font-size: 12px;
+    font-weight: 600;
+    display: inline-block;
+  }
+
+  .admin-status.online {
+    background: #e3fcef;
+    color: #1b9a59;
+  }
+
+  .admin-profile-body {
+    border-top: 1px solid #eee;
+    padding-top: 16px;
+  }
+
+  .info-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 0;
+    font-size: 14px;
+    color: #444;
+  }
+
+  .info-row label {
+    font-weight: 600;
+    color: #555;
+  }
+</style>

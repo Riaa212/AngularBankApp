@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
 @Injectable({
@@ -5,5 +6,15 @@ import { Injectable } from '@angular/core';
 })
 export class UserService {
 
-  constructor() { }
+  constructor(private http:HttpClient) 
+  {
+
+  }
+
+  getAllUsers()
+  {
+    console.log("get all users called..")
+  return this.http.get("http://localhost:2424/user/getAll");
+  }
+
 }
