@@ -10,7 +10,6 @@ export class UserService {
   {
 
   }
-
   getAllUsers()
   {
     console.log("get all users called..")

@@ -12,6 +12,9 @@ import { HttpClientModule } from '@angular/common/http';
 import {ReactiveFormsModule} from '@angular/forms';
 import { DashboardComponent } from './RBI/dashboard/dashboard.component';
 import { AllBankComponent } from './RBI/all-bank/all-bank.component';
+import { ViewBankComponent } from './RBI/view-bank/view-bank.component';
+import { ErrorPageComponent } from './error-page/error-page.component';
+import { AdminProfileComponent } from './RBI/admin-profile/admin-profile.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +25,10 @@ import { AllBankComponent } from './RBI/all-bank/all-bank.component';
     UserLoginComponent,
     UserRegisterComponent,
     DashboardComponent,
-    AllBankComponent
+    AllBankComponent,
+    ViewBankComponent,
+    ErrorPageComponent,
+    AdminProfileComponent
   ],
   imports: [
     BrowserModule,

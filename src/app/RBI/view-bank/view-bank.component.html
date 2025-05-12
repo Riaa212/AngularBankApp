@@ -1,0 +1,176 @@
+<!-- 
+<html>
+<body>
+<div class="container">
+    <div class="row mb-4 mt-2">
+        <h5>Bank Details</h5>
+        <div class="col-md-6">
+            <div class="card p-4">
+            <p>Bank Name: {{bankData.bankName}}</p>
+            <p>Main Branch: {{bankData.mainBranch}}</p>
+            <p>Mobile: {{bankData.contactNumber}}</p>
+            <p>location: {{bankData.location}}</p>
+            <p>IFSC Code: {{bankData.ifsc}}</p>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <h5>All Branch Details</h5>
+            <div *ngFor="let b of branchData" class="card p-4 mt-3" style="box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);background-color: #f6f3ff;">
+                <p>Branch Name: {{b.branchName}}</p>
+                <p>Branch Address: {{b.branchAddress}}</p>
+                <p>Contact Number: {{b.contactNumber}}</p>
+                <hr class="hr-blurry">
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
+ -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bank Details & Branches</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #c8b6ec;
+            color: #333;
+            margin: 20px;
+        }
+
+        .bank-container {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            margin-bottom: 30px;
+        }
+
+        .bank-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #eee;
+            padding-bottom: 15px;
+        }
+
+        .bank-logo {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: #ddd; /* Placeholder */
+            margin-right: 15px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.5em;
+            color: #555;
+        }
+
+        .bank-title {
+            font-size: 1.8em;
+            font-weight: bold;
+            color: #2c3e50;
+        }
+
+        .bank-details-list {
+            list-style: none;
+            padding: 0;
+            margin-bottom: 25px;
+        }
+
+        .bank-details-list li {
+            padding: 8px 0;
+            border-bottom: 1px dashed #eee;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .bank-details-list li:last-child {
+            border-bottom: none;
+        }
+
+        .detail-label {
+            font-weight: bold;
+            color: #555;
+        }
+
+        .detail-value {
+            color: #333;
+        }
+
+        .branch-list-container {
+            margin-top: 20px;
+            border-top: 2px solid #eee;
+            padding-top: 20px;
+        }
+
+        .branch-list-title {
+            font-size: 1.5em;
+            font-weight: bold;
+            color: #2c3e50;
+            margin-bottom: 15px;
+        }
+
+        .branch-item {
+            background-color: #f9f9f9;
+            /* background-color: #f4effe; */
+            border: 1px solid #eee;
+            border-radius: 6px;
+            padding: 15px;
+            margin-bottom: 10px;
+        }
+
+        .branch-item h4 {
+            font-size: 1.1em;
+            color: #34495e;
+            margin-top: 0;
+            margin-bottom: 5px;
+        }
+
+        .branch-details {
+            color: #777;
+            font-size: 0.9em;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="bank-container">
+        <div class="bank-header">
+            <div class="bank-logo"> {{ getInitials(bankData.bankName) }} </div> 
+            <h2 class="bank-title">{{bankData.bankName}} Bank</h2>
+             <!-- <div class="bank-logo">
+              {{ getInitials(bankData.bankName) }}
+            </div> -->
+        </div>
+        <ul class="bank-details-list">
+            <li><span class="detail-label">Bank Name:</span> <span class="detail-value">{{bankData.bankName}}</span></li>
+            <li><span class="detail-label">Main Branch:</span> <span class="detail-value">{{bankData.mainBranch}}</span></li>
+            <li><span class="detail-label">IFSC Code:</span> <span class="detail-value">{{bankData.ifsc}}</span></li>
+            <li><span class="detail-label">Location:</span> <span class="detail-value">{{bankData.location}}</span></li>
+            <li><span class="detail-label">Contact Number:</span> <span class="detail-value">{{bankData.contactNumber}}</span></li>
+        </ul>
+
+        <div class="branch-list-container">
+            <h3 class="branch-list-title">Our Premium Branches</h3>
+            <div class="branch-item" *ngFor="let b of branchData">
+                <h4>Branch Name: {{b.branchName}}</h4>
+                <p class="branch-details">
+                    Address: {{b.branchAddress}}<br>
+                    Contact: {{b.contactNumber}}
+                </p>
+                <p>
+                <a href="#"  style="color: #4b0082;" class="fw-bold">Edit</a> &nbsp;
+                <a href="#"  style="color: rgb(192, 2, 2);" class="fw-bold">Delete</a>
+                </p>
+            </div>
+            </div>
+    </div>
+</body>
+</html>

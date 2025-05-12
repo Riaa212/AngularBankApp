@@ -74,7 +74,7 @@
       height: 35px;
       border-radius: 50%;
     }
-    .course-card {
+  .course-card {
   width: 230px;
   padding: 25px;
   border-radius: 12px;
@@ -122,7 +122,7 @@
   <a href="#"><i class="fa fa-layer-group me-2"></i> Manage User</a>
   <a href="#"><i class="fa fa-boxes me-2"></i> Manage Accounts</a>
   <a href="#"><i class="fa fa-cogs me-2"></i>Setting</a>
-  <a href="#"><i class="fa fa-user-edit me-2"></i>Profile</a>
+  <a href="#" routerLink="/adminProfile"><i class="fa fa-user-edit me-2"></i>Profile</a>
 </div>
 
 <!-- Main Content -->
@@ -151,7 +151,7 @@
           <!-- <h5 class="mb-3">Default Form</h5> -->
           <div class="row">
             <div class="col-md-6">
-        <div class="course-card" style="  background-color: #f4effe;">
+              <div class="course-card" style="background-color: #f4effe;">
               <div class="icon-box">
                 <!-- <img src="/i1.png" alt="Data Science Icon" /> -->
               </div>
@@ -160,11 +160,11 @@
       </div>
             </div>
             <div class="col-md-6">
-                   <div class="course-card" style="  background-color: #f4effe;">
+                   <div class="course-card" style="background-color: #f4effe;">
               <div class="icon-box">
                 <!-- <img src="/i1.png" alt="Data Science Icon" /> -->
               </div>
-              <h5 class="title"><a class="text-decoration-none text-dark" routerLink="/allBank">Bank</a></h5>
+              <h5 class="title"><a class="text-decoration-none text-dark" routerLink="/allBank">All Bank</a></h5>
               <p class="subtitle"><strong>10</strong> Bank</p>
       </div>
             </div>
@@ -204,7 +204,7 @@
         <tr>
           <th>#</th>
           <th>Date & Time</th>
-          <th>Account Holder</th>
+          <th>Account Number</th>
           <th>Type</th>
           <th>Amount</th>
           <th>Status</th>
@@ -212,16 +212,23 @@
         </tr>
       </thead>
       <tbody>
-        <tr>
-          <td>1</td>
-          <td>10 May 2025, 10:15 AM</td>
-          <td>Aman Verma</td>
-          <td><span class="badge type-deposit">Deposit</span></td>
-          <td>₹20,000.00</td>
-          <td><span class="badge status-success">Success</span></td>
+        <tr *ngFor="let t of transactionData;index as i">
+          <td>{{i+1}}</td>
+          <!-- <td>{{transactionData | json}}</td> -->
+          <td>{{t.transactionDate}}</td>
+          <td>{{t.account.accountNumber}}</td>
+          <td>
+             <span class="badge type-withdrawal" *ngIf="t.transactionType=='Withdrawal'">{{t.transactionType}}</span>
+            <span class="badge status-success" *ngIf="t.transactionType=='Deposit'">{{t.transactionType}}</span>
+
+            <!-- <span class="badge type-deposit">{{t.transactionType}}</span></td> -->
+          <td>₹{{t.amount}}</td>
+          <td>
+            <span class="badge status-success">{{t.transactionStatus}}</span>
+          </td>
           <td><button class="btn-view">View</button></td>
         </tr>
-        <tr>
+        <!-- <tr>
           <td>2</td>
           <td>09 May 2025, 02:05 PM</td>
           <td>Nisha Patel</td>
@@ -229,8 +236,8 @@
           <td>₹5,000.00</td>
           <td><span class="badge status-pending">Pending</span></td>
           <td><button class="btn-view">View</button></td>
-        </tr>
-        <tr>
+        </tr> -->
+        <!-- <tr>
           <td>3</td>
           <td>08 May 2025, 06:20 PM</td>
           <td>Rajiv Singh</td>
@@ -238,7 +245,7 @@
           <td>₹12,500.00</td>
           <td><span class="badge status-failed">Failed</span></td>
           <td><button class="btn-view">View</button></td>
-        </tr>
+        </tr> -->
       </tbody>
     </table>
   </div>
@@ -265,7 +272,7 @@
       <tbody>
         <tr *ngFor="let user of userdata">
           <td>{{user.firstName}} {{user.lastName}}</td>
-           <ng-container *ngFor="let account of user.accounts">
+          <ng-container *ngFor="let account of user.accounts">
           <td>{{account.accountNumber}}</td>
           <td>{{account.accountType}}</td>
           <td>₹{{account.balance}}.0</td>
@@ -275,7 +282,7 @@
             
             <button class="btn-small acc-view">View</button>
             <button class="btn-small acc-freeze">Freeze</button>
-            <button class="btn-small acc-remove">X</button>
+            <!-- <button class="btn-small acc-remove">X</button> -->
           </td>
         </tr>
       </tbody>

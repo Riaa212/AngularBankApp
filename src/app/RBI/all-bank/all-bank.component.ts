@@ -1,5 +1,7 @@
 import { Component, inject } from '@angular/core';
 import { BankService } from '../../services/bank.service';
+import { HttpClient } from '@angular/common/http';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-all-bank',
@@ -11,10 +13,14 @@ export class AllBankComponent {
     
   bankservice=inject(BankService)
   bankData:any
-  constructor()
+  bankid:any
+
+  constructor(private http:HttpClient,private route:ActivatedRoute)
   {
+    this.bankid = this.route.snapshot.paramMap.get('id');
     this.getAllBanks()
   }
+
   getAllBanks()
   {
     this.bankservice.getAllBank().subscribe((res)=>{

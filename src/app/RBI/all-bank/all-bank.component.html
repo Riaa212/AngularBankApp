@@ -10,9 +10,12 @@
       <p>Branch: {{bank.mainBranch}}</p>
       <p>IFSC: {{bank.ifsc}}</p>
       <p>Location: {{bank.location}}</p>
+      <!-- <button class="btn btn-" style="background-color:#4b0082"> -->
+        <a  href="#" [routerLink]="['/viewBank',bank.id]" style="color: #4b0082;" class="fw-bold">View Bank</a>
+      <!-- </button> -->
     </div>
-  
   </div>
 </div>
 
 <!-- {{bankData | json}} -->
+
