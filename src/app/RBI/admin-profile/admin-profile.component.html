@@ -1,33 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>प्रोफ़ाइल सेटिंग्स</title>
+    <!-- <link rel="stylesheet" href="style.css"> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <div class="profile-container">
+        <main class="main-content">
+            <div class="profile-header">
+                <div class="user-info">
+                    <div class="avatar large">
+                        <img src="https://picsum.photos/200/300" alt="User Avatar">
+                    </div>
+                    <div class="user-details">
+                        <h2>Azunyan U. Wu <span class="pro-badge">Admin</span></h2>
+                        <p>elementary221bgmail.com</p>
+                    </div>
+                </div>
+            </div>
 
-<div class="container-fuild w-100" style="display: flex; justify-content: center;align-items: center;">
-<div class="row">
-<div class="admin-profile-card">
-  <div class="admin-profile-header">
-    <img src="/user-logo.png" alt="Admin Avatar" class="admin-avatar">
-    <div class="admin-info">
-      <h3>Rajeev Malhotra</h3>
-      <p class="admin-role">Administrator</p>
-      <span class="admin-status online">Online</span>
+            <section class="personal-info">
+                <h3>Personal Info</h3>
+                <p>You can change your personal information settings here.</p>
+            </section>
+
+            <section class="form-section">
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label for="full-name">Full Name</label>
+                        <div class="input-wrapper">
+                            <i class="fas fa-search"></i>
+                            <input type="text" id="full-name" value="Azusa Nakano">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <div class="input-wrapper">
+                            <i class="fas fa-envelope"></i>
+                            <input type="email" id="email" value="elementary221b@gmail.com">
+                        </div>
+                    </div>
+                </div>
+                <div class="form-grid">
+                      <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <div class="input-wrapper phone-input">
+                            <div class="country-code">
+                                <img src="https://flagcdn.com/20x15/gb.png" alt="UK Flag">
+                                +44
+                            </div>
+                            <input type="tel" id="phone" value="(123) 456-9878">
+                            <i class="fas fa-question-circle"></i>
+                        </div>
+                    </div>
+                </div>
+            </section>
+<!-- 
+            <section class="change-avatar">
+                <h3>Change Avatar</h3>
+                <div class="avatar-upload">
+                    <div class="current-avatar">
+                        <img src="https://picsum.photos/200/300" alt="Current Avatar">
+                    </div>
+                    <div class="upload-area">
+                        <i class="fas fa-upload"></i>
+                        <p><b>Click here</b> to upload your file or drag.</p>
+                        <p class="supported-formats">Supported Format: SVG, JPG, PNG (10mb each)</p>
+                    </div>
+                </div>
+            </section> -->
+        </main>
     </div>
-  </div>
-  <div class="admin-profile-body">
-    <div class="info-row">
-      <label>Email:</label>
-      <span>rajeev.malhotramybank.com</span>
-    </div>
-    <div class="info-row">
-      <label>Phone:</label>
-      <span>+91 9876543210</span>
-    </div>
-    <div class="info-row">
-      <label>Location:</label>
-      <span>New Delhi, India</span>
-    </div>
-    <div class="info-row">
-      <label>Joined:</label>
-      <span>15 Jan 2023</span>
-    </div>
-  </div>
-</div>
-</div>
-</div>
+</body>
+</html>

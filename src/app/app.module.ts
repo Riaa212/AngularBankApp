@@ -15,6 +15,8 @@ import { AllBankComponent } from './RBI/all-bank/all-bank.component';
 import { ViewBankComponent } from './RBI/view-bank/view-bank.component';
 import { ErrorPageComponent } from './error-page/error-page.component';
 import { AdminProfileComponent } from './RBI/admin-profile/admin-profile.component';
+import { DashboardLayoutComponent } from './RBI/dashboard-layout/dashboard-layout.component';
+import { SidebarComponent } from './RBI/sidebar/sidebar.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +30,9 @@ import { AdminProfileComponent } from './RBI/admin-profile/admin-profile.compone
     AllBankComponent,
     ViewBankComponent,
     ErrorPageComponent,
-    AdminProfileComponent
+    AdminProfileComponent,
+    DashboardLayoutComponent,
+    SidebarComponent
   ],
   imports: [
     BrowserModule,

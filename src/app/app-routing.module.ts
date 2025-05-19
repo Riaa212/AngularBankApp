@@ -11,9 +11,21 @@ import { AllBankComponent } from './RBI/all-bank/all-bank.component';
 import { ViewBankComponent } from './RBI/view-bank/view-bank.component';
 import { ErrorPageComponent } from './error-page/error-page.component';
 import { AdminProfileComponent } from './RBI/admin-profile/admin-profile.component';
+import { SidebarComponent } from './RBI/sidebar/sidebar.component';
+import { DashboardLayoutComponent } from './RBI/dashboard-layout/dashboard-layout.component';
 
 const routes: Routes = [
-    {path:'',component:DashboardComponent},
+    {path:'',component:DashboardLayoutComponent
+      ,children:[
+      { path: 'dashboard', component: DashboardLayoutComponent },
+      {path:'dashboard-data',component:DashboardComponent},
+       { path: 'sidebar', component: SidebarComponent }, // Route for the profile within the sidebar
+      {path:'adminProfile',component:AdminProfileComponent},
+        {path:'Userlogin',component:UserLoginComponent},
+      { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
+      ]
+    },
+      // {path:'sidebar',component:SidebarComponent},
     {path:'viewBank/:id',component:ViewBankComponent},
   {path:'Userlogin',component:UserLoginComponent},
   {path:'userRegister',component:UserRegisterComponent},
@@ -21,7 +33,6 @@ const routes: Routes = [
   {path:'updateBank',component:UpdateBankComponent},
   {path:'user',component:UserComponent},
   {path:'allBank',component:AllBankComponent},
-  {path:'adminProfile',component:AdminProfileComponent},
   {path:'**',component:ErrorPageComponent}
 ];
 
