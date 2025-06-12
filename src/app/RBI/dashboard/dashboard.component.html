@@ -148,9 +148,18 @@
           <td>{{account.accountType}}</td>
           <td>₹{{account.balance}}.0</td>
           <td><span class="badge acc-active">{{account.accstatus}}</span></td>
+          <td >
+            <div *ngIf="account.freeze; else notLoggedIn">
+          Frezee
+            </div>
+
+<ng-template #notLoggedIn>
+  <p>Activate</p>
+</ng-template>
+
+          </td>
           </ng-container>
           <td>
-            
             <button class="btn-small acc-view">View</button>
             <button class="btn-small acc-freeze">Freeze</button>
             <!-- <button class="btn-small acc-remove">X</button> -->
@@ -176,3 +185,4 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
+

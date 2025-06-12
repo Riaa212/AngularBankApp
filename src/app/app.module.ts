@@ -19,6 +19,7 @@ import { DashboardLayoutComponent } from './RBI/dashboard-layout/dashboard-layou
 import { SidebarComponent } from './RBI/sidebar/sidebar.component';
 import { ClipboardComponent } from './RBI/clipboard/clipboard.component';
 import { ClipboardModule } from '@angular/cdk/clipboard';
+import { UserDashboardComponent } from './user/user-dashboard/user-dashboard.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import { ClipboardModule } from '@angular/cdk/clipboard';
     AdminProfileComponent,
     DashboardLayoutComponent,
     SidebarComponent,
-    ClipboardComponent
+    ClipboardComponent,
+    UserDashboardComponent
   ],
   imports: [
     BrowserModule,

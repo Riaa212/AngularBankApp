@@ -55,4 +55,9 @@ export class DashboardComponent {
   this.http.post<any[]>('http://localhost:2424/account/filter', body)
     .subscribe(data => this.transactionsFilter = data);
   }
+
+  frezeeAcc()
+  {
+    
+  }
 }

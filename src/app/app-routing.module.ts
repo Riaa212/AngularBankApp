@@ -13,19 +13,20 @@ import { AdminProfileComponent } from './RBI/admin-profile/admin-profile.compone
 import { SidebarComponent } from './RBI/sidebar/sidebar.component';
 import { DashboardLayoutComponent } from './RBI/dashboard-layout/dashboard-layout.component';
 import { ClipboardComponent } from './RBI/clipboard/clipboard.component';
+import { UserDashboardComponent } from './user/user-dashboard/user-dashboard.component';
 
 const routes: Routes = [
     {path:'',component:DashboardLayoutComponent
       ,children:[
       {path:'dashboard-data',component:DashboardComponent},
-            { path: 'dashboard', component: DashboardLayoutComponent },
+      { path: 'dashboard', component: DashboardLayoutComponent },
        { path: 'sidebar', component: SidebarComponent }, // Route for the profile within the sidebar
-        {path:'Userlogin',component:UserLoginComponent},
       { path: '', redirectTo: '/dashboard-data', pathMatch: 'full' },
       ]
     },
     {path:'viewBank/:id',component:ViewBankComponent},
   {path:'Userlogin',component:UserLoginComponent},
+  {path:'user-dashboard',component:UserDashboardComponent},
   {path:'adminProfile',component:AdminProfileComponent},
   {path:'userRegister',component:UserRegisterComponent},
   {path:'Registerbank',component:RegisterBankComponent},
